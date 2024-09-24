@@ -34,7 +34,7 @@ impl Stdout {
     Stdout { stdout }
   }
 
-  fn writeln(&mut self, str: String) {
+  fn write_line(&mut self, str: String) {
     writeln!(self.stdout, "{}", str).unwrap();
   }
 }
@@ -45,5 +45,5 @@ fn main() {
 
     let line = stdin.read_line();
 
-    stdout.writeln(format!("Your Input is \"{}\"", line.trim().to_string()));
+    stdout.write_line(format!("Your Input is \"{}\"", line.trim().to_string()));
 }
